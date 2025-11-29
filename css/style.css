@@ -241,13 +241,220 @@ img {
     height: 350px;
     background-color: #e2e8f0;
     border-radius: 30px;
-    /* Squircle */
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-muted);
     font-weight: 600;
     position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow-hover);
+    overflow: hidden;
+}
+
+.profile-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: var(--border);
+    z-index: -1;
+    border-radius: 40px;
+    opacity: 0.5;
+    transform: rotate(-3deg);
+}
+
+.initials {
+    font-size: 5rem;
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+/* Sections */
+.section {
+    padding: 100px 0;
+}
+
+.bg-surface {
+    background-color: var(--bg-surface);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* About Cards */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-card {
+    background: var(--bg-surface);
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.about-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.skills-list .icon {
+    margin-right: 1rem;
+    width: 32px;
+    height: 32px;
+    background: var(--accent-light);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+/* Experience */
+.experience-showcase {
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.exp-logo-area h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.exp-role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+}
+
+.exp-date {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.exp-desc {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+.exp-content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+}
+
+.exp-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.exp-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.exp-list strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.exp-list p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.project-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #f1f5f9;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--text-muted);
+    border: 1px dashed var(--border);
+}
+
+.project-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.tag {
+    padding: 0.4rem 1rem;
+    background: var(--bg-body);
+    color: var(--text-main);
+    border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 500;
     border: 1px solid var(--border);

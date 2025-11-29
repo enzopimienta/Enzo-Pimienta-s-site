@@ -248,22 +248,6 @@ img {
     color: var(--text-muted);
     font-weight: 600;
     position: relative;
-    z-index: 1;
-    box-shadow: var(--shadow-hover);
-    overflow: hidden;
-}
-
-.profile-placeholder::before {
-    content: '';
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-}
-
-.tag {
-    padding: 0.4rem 1rem;
-    background: var(--bg-body);
-    color: var(--text-main);
-    border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 500;
     border: 1px solid var(--border);

@@ -369,6 +369,42 @@ img {
     margin-bottom: 0.5rem;
 }
 
+.exp-title-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.exp-title-row h3 {
+    margin-bottom: 0;
+}
+
+.wilo-experience .exp-header,
+.triumph-experience .exp-header {
+    display: block;
+}
+
+.wilo-experience .exp-logo-area,
+.triumph-experience .exp-logo-area {
+    width: 100%;
+}
+
+.wilo-title-row {
+    justify-content: space-between;
+}
+
+.triumph-title-row {
+    justify-content: space-between;
+}
+
+.company-logo {
+    display: block;
+    width: 140px;
+    max-height: 58px;
+    object-fit: contain;
+}
+
 .exp-role {
     font-size: 1.1rem;
     font-weight: 600;
@@ -751,6 +787,21 @@ img {
 .project-gallery img:hover {
     transform: scale(1.05);
     z-index: 2;
+    box-shadow: var(--shadow-md);
+}
+
+.experience-photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.experience-photo:hover {
+    transform: scale(1.03);
     box-shadow: var(--shadow-md);
 }
 

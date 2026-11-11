@@ -793,7 +793,8 @@ img {
 .experience-photo {
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    object-fit: contain;
+    background: #f1f5f9;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-sm);

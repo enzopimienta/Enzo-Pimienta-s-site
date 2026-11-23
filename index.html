@@ -1,354 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enzo PIMIENTA-RASSAT | ICAM General Engineering Student</title>
-    <meta name="description"
-        content="Portfolio of Enzo PIMIENTA-RASSAT, an ICAM general engineering student specializing in industrial product design.">
-
-    <!-- Fonts -->
+    <title>Vracicam — Le vrac autrement</title>
+    <meta name="description" content="Découvrez les produits en vrac dans un distributeur interactif.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <div id="app">
-        <header class="header">
-            <div class="container header-content">
-                <a href="#" class="logo">Enzo<span class="highlight">.PR</span></a>
-                <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#international">International</a></li>
-                    </ul>
-                </nav>
+    <header class="topbar">
+        <a class="brand" href="#" aria-label="Vracicam accueil">
+            <span class="brand-mark" aria-hidden="true"><i></i></span>
+            <span>VRACICAM</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <a class="active" href="#boutique" data-view="boutique">Boutique</a>
+            <a href="#concept" data-view="concept">Notre concept</a>
+            <a href="#mouvements" data-view="mouvements">Nos mouvements</a>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-button" id="search-button" aria-label="Recherche">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            </button>
+            <button class="cart-button" id="cart-button" aria-label="Voir le panier">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2 10h9l2-7H7"></path><circle cx="9" cy="19" r="1"></circle><circle cx="17" cy="19" r="1"></circle></svg>
+                <span id="cart-count">0</span>
+            </button>
+            <button class="avatar" aria-label="Mon compte">E</button>
+        </div>
+    </header>
+
+    <main id="boutique">
+        <section class="shop">
+            <div class="machine-area">
+                <div class="machine-stage" id="machine-stage">
+                    <div class="ambient-leaf leaf-one"></div>
+                    <div class="ambient-leaf leaf-two"></div>
+                    <canvas id="three-machine" aria-label="Modèle 3D interactif du distributeur Vracicam"></canvas>
+                    <div class="stage-shadow"></div>
+                </div>
+                <div class="drag-hint">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8M12 8v8"></path><circle cx="12" cy="12" r="9"></circle></svg>
+                    Faites tourner le distributeur
+                </div>
             </div>
-        </header>
 
-        <main>
-            <!-- Hero Section -->
-            <section id="hero" class="hero">
-                <div class="container hero-content">
-                    <div class="hero-text">
-                        <span class="subtitle">Third-Year ICAM General Engineering Student</span>
-                        <h1>Enzo <br>PIMIENTA-RASSAT</h1>
-                        <p class="tagline">Specializing in Industrial Product Design</p>
-                        <p class="description">Technically minded • Open-minded • Curious • Energetic • Independent</p>
-                        <div class="cta-group">
-                            <a href="#experience" class="btn btn-primary">My Experience</a>
-                            <a href="#about" class="btn btn-secondary">Learn More</a>
-                        </div>
+            <aside class="product-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Distributeur 01</p>
+                        <h1>À vos bocaux !</h1>
                     </div>
-                    <div class="hero-visual">
-                        <div class="image-placeholder profile-placeholder">
-                            <span class="initials"></span>
-                            <img src="images/Profil/Profil1.JPG" alt="Portrait of Enzo Pimienta-Rassat" loading="lazy">
-                        </div>
-                    </div>
+                    <button class="close-button" aria-label="Fermer">×</button>
                 </div>
-            </section>
 
-            <!-- About Section -->
-            <section id="about" class="section">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>About</h2>
-                        <div class="line"></div>
-                    </div>
-                    <div class="about-grid">
-                        <div class="about-card">
-                            <h3>Profile</h3>
-                            <p><strong>20 years old – Third-year Engineering Student at ICAM</strong>, pursuing a
-                                five-year General Engineering degree through a work-study program.</p>
-                            <p class="mt-2">I am passionate about <strong>industrial product design and
-                                    development</strong>. My work-study experience has strengthened my theoretical and
-                                practical skills across engineering design, manufacturing methods, and workshop
-                                environments, giving me a broad understanding of industry.</p>
-                        </div>
-                        <div class="about-card">
-                            <h3>Key Strengths</h3>
-                            <ul class="skills-list">
-                                <li><span class="icon">💡</span> Technical curiosity</li>
-                                <li><span class="icon">🤝</span> Reliability</li>
-                                <li><span class="icon">⚡</span> Energy</li>
-                                <li><span class="icon">🎯</span> Independence</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="categories" role="tablist" aria-label="Catégories">
+                    <button class="category active" data-category="epicerie" role="tab" aria-selected="true"><span class="category-icon grains-icon"></span><span>Épicerie</span></button>
+                    <button class="category" data-category="maison" role="tab" aria-selected="false"><span class="category-icon soap-icon"></span><span>Maison</span></button>
+                    <button class="category" data-category="boissons" role="tab" aria-selected="false"><span class="category-icon cup-icon"></span><span>Boissons</span></button>
                 </div>
-            </section>
 
-            <!-- Experience Section -->
-            <section id="experience" class="section">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>Key Experience</h2>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="experience-showcase wilo-experience">
-                        <div class="exp-header">
-                            <div class="exp-logo-area">
-                                <div class="exp-title-row wilo-title-row">
-                                    <h3>WILO France SAS</h3>
-                                    <img class="company-logo" src="images/wilo-logo.png" alt="WILO logo" loading="lazy">
-                                </div>
-                                <span class="exp-role">Methods &amp; Industrialization Engineer (Apprenticeship)</span>
-                            </div>
-                            <p class="exp-desc">I am currently working at WILO France SAS as a Methods &amp;
-                                Industrialization Engineer through an apprenticeship program.</p>
-                        </div>
-
-                        <div class="exp-content-grid">
-                            <div class="exp-details wilo-exp-details">
-                                <p class="exp-desc">During this experience, I contribute to industrial engineering and
-                                    continuous improvement projects focused on manufacturing processes, production
-                                    equipment, industrial methods, and process optimization.</p>
-                                <h4>Featured Project: Stator Pressing System Improvement</h4>
-                                <p class="exp-desc">Redesigning the stator pressing system (pressing machine) to achieve
-                                    accurate component positioning, reduce production defects and maintenance requirements, and
-                                    enhance operator safety.</p>
-                                <ul class="exp-list">
-                                    <li><p>Improve stator positioning and reduce defects caused by misaligned components.</p></li>
-                                    <li><p>Make the assembly process more reliable and repeatable.</p></li>
-                                    <li><p>Optimize sensor, guide, stop, and centering-component positioning.</p></li>
-                                    <li><p>Reduce maintenance needs and improve operator safety.</p></li>
-                                    <li><p>Retain the existing press cylinder and main machine structure.</p></li>
-                                </ul>
-                            </div>
-                            <div class="exp-visual">
-                                <img class="experience-photo" src="images/wilo-experience.png"
-                                    alt="Stator pressing machine at WILO France SAS" loading="lazy">
-                                <div class="exp-tags">
-                                    <span class="tag">Industrial Engineering</span>
-                                    <span class="tag">Continuous Improvement</span>
-                                    <span class="tag">Process Optimization</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-showcase triumph-experience">
-                        <div class="exp-header">
-                            <div class="exp-logo-area">
-                                <div class="exp-title-row triumph-title-row">
-                                    <h3>Triumph Controls France</h3>
-                                    <img class="company-logo" src="images/triumph-logo.png" alt="Triumph Group logo"
-                                        loading="lazy">
-                                </div>
-                                <span class="exp-role">Engineering Design Intern</span>
-                                <span class="exp-date">May – July 2025</span>
-                            </div>
-                            <p class="exp-desc">A Triumph Group subsidiary specializing in control systems for the
-                                aerospace, rail, and marine industries.</p>
-                        </div>
-
-                        <div class="exp-content-grid">
-                            <div class="exp-details">
-                                <h4>Responsibilities & Achievements</h4>
-                                <ul class="exp-list">
-                                    <li>
-                                        <strong>Engineering Design & Documentation</strong>
-                                        <p>Created engineering drawings and researched and selected technical solutions.</p>
-                                    </li>
-                                    <li>
-                                        <strong>Key Project: Adapting the CAC and CAB Control Cable Elongation Test
-                                            Bench</strong>
-                                        <p>Developed a complete, purpose-built tool, balancing adaptability and design
-                                            constraints through simulation and careful selection of suitable solutions.</p>
-                                    </li>
-                                    <li>
-                                        <strong>3D Modeling (SolidWorks)</strong>
-                                        <p>Recreated the automatic elongation test bench assembly in 3D and modified its
-                                            bracket.</p>
-                                    </li>
-                                    <li>
-                                        <strong>Data Management</strong>
-                                        <p>Updated records in Syteline, including material research and specific statuses.</p>
-                                    </li>
-                                    <li>
-                                        <strong>Hands-on Workshop Experience</strong>
-                                        <p>Assembled components in the workshop to understand ergonomic and cost-efficiency
-                                            requirements.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="exp-visual">
-                                <div class="project-gallery">
-                                    <img src="images/Triumph/Capture2.PNG" alt="SolidWorks assembly" loading="lazy">
-                                    <img src="images/Triumph/Capture3.PNG" alt="SolidWorks simulation" loading="lazy">
-                                    <img src="images/Triumph/Capture4.PNG" alt="Measuring tool" loading="lazy">
-                                </div>
-                                <div class="exp-tags">
-                                    <span class="tag">SolidWorks</span>
-                                    <span class="tag">Syteline</span>
-                                    <span class="tag">Project Management</span>
-                                    <span class="tag">Workshop</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Other Experiences -->
-                    <div class="other-exp-grid">
-                        <div class="mini-card">
-                            <h4>Design Duval</h4>
-                            <p>Workshop Operator</p>
-                        </div>
-                        <div class="mini-card">
-                            <h4>ADN Service</h4>
-                            <p>Care Assistant</p>
-                        </div>
-                        <div class="mini-card">
-                            <h4>MG Tech</h4>
-                            <p>Engineering Technician / Drafter Intern</p>
-                        </div>
-                    </div>
+                <div class="product-list" id="product-list">
+                    <article class="product-card selected" data-name="Pâtes torsadées" data-price="2.40">
+                        <div class="product-thumb pasta-thumb"><span></span></div>
+                        <div class="product-info"><h2>Pâtes torsadées</h2><p>Fait à partir de blé français</p><strong>2,40 € <small>/ kg</small></strong></div>
+                        <button class="add-button" aria-label="Ajouter Pâtes torsadées">+</button>
+                    </article>
+                    <article class="product-card" data-name="Riz basmati" data-price="3.20">
+                        <div class="product-thumb rice-thumb"><span></span></div>
+                        <div class="product-info"><h2>Riz basmati</h2><p>Origine Inde · vrac</p><strong>3,20 € <small>/ kg</small></strong></div>
+                        <button class="add-button" aria-label="Ajouter Riz basmati">+</button>
+                    </article>
+                    <article class="product-card" data-name="Avoine complète" data-price="1.90">
+                        <div class="product-thumb oat-thumb"><span></span></div>
+                        <div class="product-info"><h2>Avoine complète</h2><p>Flocons dorés · agriculture raisonnée</p><strong>1,90 € <small>/ kg</small></strong></div>
+                        <button class="add-button" aria-label="Ajouter Avoine complète">+</button>
+                    </article>
                 </div>
-            </section>
+            </aside>
+        </section>
+    </main>
 
-            <!-- Skills Section -->
-            <section id="skills" class="section bg-surface">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>Technical Skills</h2>
-                        <div class="line"></div>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>CAD & Engineering</h3>
-                            <div class="skill-bars">
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>SolidWorks</span>
-                                        <span>Proficient</span>
-                                    </div>
-                                    <div class="progress-bg">
-                                        <div class="progress" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Autodesk Inventor</span>
-                                        <span>Proficient</span>
-                                    </div>
-                                    <div class="progress-bg">
-                                        <div class="progress" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Office & Data</h3>
-                            <div class="skill-bars">
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Excel (Suite Office)</span>
-                                        <span>Proficient</span>
-                                    </div>
-                                    <div class="progress-bg">
-                                        <div class="progress" style="width: 70%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Technical Drawing</span>
-                                        <span>Advanced</span>
-                                    </div>
-                                    <div class="progress-bg">
-                                        <div class="progress" style="width: 65%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Languages</h3>
-                            <div class="exp-tags">
-                                <span class="tag">English B2</span>
-                                <span class="tag">Spanish B1</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="site-view" id="concept-view" aria-hidden="true">
+        <p class="eyebrow">Notre concept</p>
+        <h1>Consommer mieux, emballage après emballage.</h1>
+        <p class="view-lead">VRACICAM rend les produits du quotidien accessibles en vrac, directement dans votre quartier, avec vos propres contenants.</p>
+        <div class="view-grid">
+            <article class="view-card"><strong>Apportez</strong><p>Pots, bocaux ou sacs propres selon le produit choisi.</p></article>
+            <article class="view-card"><strong>Servez-vous</strong><p>Pesez et choisissez exactement la quantité dont vous avez besoin.</p></article>
+            <article class="view-card"><strong>Paiement</strong><p>Réglez simplement sur place avec la borne de paiement intégrée.</p></article>
+        </div>
+    </section>
 
-            <!-- International & Hobbies Section -->
-            <section id="international" class="section">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>International Experience & Hobbies</h2>
-                        <div class="line"></div>
-                    </div>
+    <section class="site-view" id="mouvements-view" aria-hidden="true">
+        <p class="eyebrow">Nos mouvements</p>
+        <h1>Moins de déchets. Plus de solutions.</h1>
+        <p class="view-lead">Nous soutenons une consommation locale, réutilisable et transparente.</p>
+        <div class="view-grid">
+            <article class="view-card"><strong>Zéro plastique</strong><p>Priorité aux contenants réutilisés et aux emballages tissus.</p></article>
+            <article class="view-card"><strong>Produits locaux</strong><p>Une sélection courte entre producteurs régionaux et essentiels du quotidien.</p></article>
+            <article class="view-card"><strong>Économie circulaire</strong><p>Chaque recharge prolonge la durée de vie des objets que vous possédez déjà.</p></article>
+        </div>
+    </section>
 
-                    <div class="international-content">
-                        <div class="travel-card">
-                            <div class="travel-text">
-                                <h3>Travel: China, India, Sri Lanka &amp; Mexico</h3>
-                                <p>I have traveled to India and China in 2025, spent time in Sri Lanka, and visited
-                                    Mexico. These experiences gave me the opportunity to visit companies, connect with
-                                    local business leaders, and discover the rich cultures of these countries. They
-                                    broadened my outlook and deepened my understanding of international dynamics.</p>
-                            </div>
-                            <div class="travel-gallery">
-                                <img src="images/Voyages%20Chine%20&%20Inde/20251019_093814.jpg"
-                                    alt="Travel in China and India 1" loading="lazy">
-                                <img src="images/Voyages%20Chine%20&%20Inde/20250210_110911.jpg"
-                                    alt="Visit to the Taj Mahal in India" loading="lazy">
-                                <img src="images/Voyages%20Chine%20&%20Inde/IMG-20250216-WA0020.jpg"
-                                    alt="Visit to a historic temple in India" loading="lazy">
-                                <img src="images/mexique.jpg" alt="El Castillo pyramid at Chichén Itzá, Mexico"
-                                    loading="lazy">
-                            </div>
-                        </div>
-
-                        <div class="hobbies-grid">
-                            <div class="hobby-item">
-                                <span class="hobby-icon">🏃</span>
-                                <span>Running</span>
-                            </div>
-                            <div class="hobby-item">
-                                <span class="hobby-icon">🎹</span>
-                                <span>Piano</span>
-                            </div>
-                            <div class="hobby-item">
-                                <span class="hobby-icon">🤝</span>
-                                <span>Volunteering</span>
-                            </div>
-                            <div class="hobby-item">
-                                <span class="hobby-icon">🎾</span>
-                                <span>Tennis</span>
-                            </div>
-                            <div class="hobby-item">
-                                <span class="hobby-icon">⛷</span>
-                                <span>Skiing</span>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2025 Enzo PIMIENTA-RASSAT. All rights reserved.</p>
-            </div>
-        </footer>
+    <div class="search-panel" id="search-panel">
+        <input id="search-input" type="search" placeholder="Rechercher un produit..." aria-label="Rechercher un produit">
     </div>
-    <script src="js/script.js"></script>
-</body>
+    <aside class="cart-panel" id="cart-panel" aria-label="Panier">
+        <h3>Votre panier</h3>
+        <p class="cart-empty" id="cart-empty">Votre panier est encore vide.</p>
+    </aside>
 
+    <div class="toast" id="toast" role="status"></div>
+    <script type="importmap">
+        {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}
+    </script>
+    <script type="module" src="js/script.js"></script>
+</body>
 </html>
